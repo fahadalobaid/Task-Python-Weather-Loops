@@ -2,8 +2,8 @@
 # - Accepts a list
 # - Prints every element of the list
 def printer(elements):
-    # Your code here
-    ...
+    for element in elements:
+        print(element)
 
 
 # to_celsius(temperatures)
@@ -14,9 +14,15 @@ def printer(elements):
 # The conversion is:
 #   C = (F - 32) * (5/9)
 def to_celsius(temperatures):
-    # Your code here
-    ...
+    c_temp=[]
+    for temp in temperatures:
+    
+        c = (temp - 32) * (5/9)
+        c_temp.append(c)
+        
+    return (c_temp)
 
+# print(to_celsius([50,60,70]))
 
 # hottest_days(temperatures, threshold)
 # - Accepts a list of temperatures
@@ -24,8 +30,12 @@ def to_celsius(temperatures):
 # - Returns a list of temperatures
 #   that exceed the threshold
 def hottest_days(temperatures, threshold):
-    # Your code here
-    ...
+    temp_list =[]
+    for temp in temperatures:
+       if temp > threshold:
+        temp_list.append(temp)
+    return temp_list
+# print(hottest_days([50,80,45,90,100],75))
 
 
 # log_hottest_days(temperatures, threshhold)
@@ -37,6 +47,7 @@ def hottest_days(temperatures, threshold):
 #   threshold IN DEGREES CELSIUS
 # hint: you can combine
 #       all previous functions
-def print_hottest_days(temperatures, threshhold):
-    # Your code here
-    ...
+def print_hottest_days(temperatures, threshold):
+    printer(to_celsius(hottest_days([30,40,50],35)))
+print_hottest_days([30,40,50],35)  
+# 
